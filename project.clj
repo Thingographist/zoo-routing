@@ -1,4 +1,4 @@
-(defproject zoo-routing "0.1.0"
+(defproject zoo-routing "0.1.1"
   :description "compojure for zookeeper"
   :url "https://github.com/Thingographist/zoo-routing"
   :license {:name "Eclipse Public License"

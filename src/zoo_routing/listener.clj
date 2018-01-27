@@ -19,11 +19,12 @@
      :pzxid (.getPzxid stat)}))
 
 (defn TreeCacheEvent->map [^TreeCacheEvent event]
-  (let [data (.getData event)]
+  (if-let [data (.getData event)]
     {:type (keyword (str (.getType event)))
      :path (.getPath data)
-     :stat (stat->map (.getStat (.getData event)))
-     :body (.getData data)}))
+     :stat (stat->map (.getStat data))
+     :body (.getData data)}
+    {:type (keyword (str (.getType event)))}))
 
 (defn make-listener [^IFn handler]
   (reify TreeCacheListener
