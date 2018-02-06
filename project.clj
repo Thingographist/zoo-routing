@@ -1,4 +1,4 @@
-(defproject zoo-routing "0.1.1"
+(defproject zoo-routing "0.1.2"
   :description "compojure for zookeeper"
   :url "https://github.com/Thingographist/zoo-routing"
   :license {:name "Eclipse Public License"
@@ -14,7 +14,6 @@
                  [org.apache.curator/curator-framework "4.0.0"]
                  [org.apache.curator/curator-recipes "4.0.0"]
                  [org.apache.curator/curator-test "4.0.0"]]
-
 
   :profiles {:dev         {:dependencies [[org.apache.curator/curator-client "4.0.0"]]} ;; ZOOKEEPER 3.5
              :repl        {:dependencies [[org.apache.zookeeper/zookeeper "3.4.11"] ;; ZOOKEEPER 3.4

@@ -15,11 +15,11 @@
 (defn- assoc-route-params [request params]
   (merge-with merge request {:route-params params}))
 
-(defn- route-request [request route]
+(defn route-request [request route]
   (when-let [params (clout/route-matches route request)]
     (assoc-route-params request params)))
 
-(defn- prepare-route [route]
+(defn prepare-route [route]
   (cond
     (string? route)
     (zclout/route-compile route)
