@@ -29,4 +29,6 @@
 (defn make-listener [^IFn handler]
   (reify TreeCacheListener
     (childEvent [this conn evt]
-      (handler (TreeCacheEvent->map evt)))))
+      (let [evt (TreeCacheEvent->map evt)]
+        (when (some? (:path evt))
+          (handler evt))))))
